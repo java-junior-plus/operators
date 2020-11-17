@@ -1,5 +1,6 @@
 package edu.junior.shape;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -12,7 +13,8 @@ import static org.assertj.core.api.Assertions.withinPercentage;
  */
 class CalculatorTest {
 
-    @ParameterizedTest
+    @DisplayName("Calculator addition test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"4.0,2.3",
                 "12.3,2.0"})
     void testAdd(float operandA, float operandB) {
@@ -23,7 +25,8 @@ class CalculatorTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(1));
     }
 
-    @ParameterizedTest
+    @DisplayName("Calculator subtraction test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"4.0,2.3",
             "12.3,2.0"})
     void testSubtract(float operandA, float operandB) {
@@ -34,7 +37,8 @@ class CalculatorTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(1));
     }
 
-    @ParameterizedTest
+    @DisplayName("Calculator division test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"4.0,2.3",
             "12.3,2.0"})
     void testDivide(float operandA, float operandB) {
@@ -45,7 +49,8 @@ class CalculatorTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(1));
     }
 
-    @ParameterizedTest
+    @DisplayName("Calculator multiplication test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"4.0,2.3",
             "12.3,2.0"})
     void testMultiply(float operandA, float operandB) {
