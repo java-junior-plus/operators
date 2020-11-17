@@ -1,5 +1,6 @@
 package edu.junior.shape;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -12,7 +13,8 @@ import static org.assertj.core.api.Assertions.withinPercentage;
  */
 class TriangleTest {
 
-    @ParameterizedTest
+    @DisplayName("Triangle perimeter test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"2,3,5"})
     void testPerimeter(float sideA, float sideB, float sideC) {
 
@@ -23,7 +25,8 @@ class TriangleTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(5));
     }
 
-    @ParameterizedTest
+    @DisplayName("Triangle area test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @CsvSource({"2,3,5"})
     void testArea(float sideA, float sideB, float sideC) {
 

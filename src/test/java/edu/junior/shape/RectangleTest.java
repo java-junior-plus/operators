@@ -1,5 +1,6 @@
 package edu.junior.shape;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -12,7 +13,8 @@ import static org.assertj.core.api.Assertions.withinPercentage;
  */
 class RectangleTest {
 
-    @ParameterizedTest
+    @DisplayName("Rectangle perimeter test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @ValueSource(floats = {13.2F, 0.5F})
     void testPerimeter(float sideA, float sideB){
 
@@ -23,7 +25,8 @@ class RectangleTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(5));
     }
 
-    @ParameterizedTest
+    @DisplayName("Rectangle area test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @ValueSource(floats = {13.2F, 0.5F})
     void testArea(float sideA, float sideB){
 

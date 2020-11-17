@@ -1,5 +1,6 @@
 package edu.junior.shape;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,7 +14,8 @@ import static org.assertj.core.api.Assertions.withinPercentage;
 class CircleTest {
 
 
-    @ParameterizedTest
+    @DisplayName("Circle circumference test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @ValueSource(floats = {0.3F, 0.0F, 123.0F, 14.0032F})
     void testCircleCircumference(float radius) {
 
@@ -24,7 +26,8 @@ class CircleTest {
         assertThat(actual).isCloseTo(expected, withinPercentage(5));
     }
 
-    @ParameterizedTest
+    @DisplayName("Circle area test")
+    @ParameterizedTest(name = "Test #" + ParameterizedTest.INDEX_PLACEHOLDER)
     @ValueSource(floats = {0.3F, 0.0F, 123.0F, 14.0032F})
     void testCircleArea(float radius) {
 
