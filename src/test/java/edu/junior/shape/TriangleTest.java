@@ -31,7 +31,7 @@ class TriangleTest {
     void testArea(float sideA, float sideB, float sideC) {
 
         Triangle triangle = new Triangle(sideA, sideB, sideC);
-        float actual = triangle.getPerimeter();
+        float actual = triangle.getArea();
 
         float s = sideA + sideB + sideC;
         float expected = (float) Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
