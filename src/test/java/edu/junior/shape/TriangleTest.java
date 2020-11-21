@@ -33,7 +33,7 @@ class TriangleTest {
         Triangle triangle = new Triangle(sideA, sideB, sideC);
         float actual = triangle.getArea();
 
-        float s = sideA + sideB + sideC;
+        float s = (sideA + sideB + sideC) / 2;
         float expected = (float) Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
 
         assertThat(actual).isCloseTo(expected, withinPercentage(5));
